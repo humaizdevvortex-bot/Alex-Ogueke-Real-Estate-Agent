@@ -1,0 +1,6 @@
+{
+  "name": "Alex Ogueke | Keller Williams Realty South Bay",
+  "description": "Premier single-page real estate portfolio for Alex Ogueke (Keller Williams Realty, CalDRE #02079279). Featuring verified Torrance and Los Angeles sales, interactive property map, transaction track record, and neighborhood guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-obsidian: #080E18;
+    --color-midnight: #0F1A2C;
+    --color-navy: #15253F;
+    --color-navy-light: #1E3557;
+    --color-gold: #C5A059;
+    --color-gold-light: #DFC080;
+    --color-gold-glow: rgba(197, 160, 89, 0.25);
+    --color-cashmere: #F8F9FB;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #111827;
+    background-color: #FAF9F6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* ==========================================================================
+   ULTRA-LUXURY LIQUID GLASS DESIGN SYSTEM
+   ========================================================================== */
+
+/* Light Frosted Glass Panel */
+.glass-luxury {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 4px 6px -1px rgba(15, 26, 44, 0.02),
+    0 20px 35px -10px rgba(15, 26, 44, 0.06),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Glass Card with Hover Elevation */
+.glass-card-luxury {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 
+    0 10px 30px -10px rgba(15, 26, 44, 0.05),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-luxury:hover {
+  transform: translateY(-4px);
+  border-color: rgba(197, 160, 89, 0.5);
+  box-shadow: 
+    0 25px 45px -12px rgba(15, 26, 44, 0.12),
+    0 0 20px -3px rgba(197, 160, 89, 0.15),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+}
+
+/* Dark Obsidian Glass Suite */
+.glass-dark-luxury {
+  background: rgba(11, 19, 32, 0.86);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Champagne Gold Shimmer Badge */
+.badge-gold {
+  background: linear-gradient(135deg, rgba(223, 192, 128, 0.15) 0%, rgba(197, 160, 89, 0.28) 100%);
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  color: #8C6D2D;
+}
+
+.badge-gold-dark {
+  background: linear-gradient(135deg, rgba(197, 160, 89, 0.2) 0%, rgba(223, 192, 128, 0.35) 100%);
+  border: 1px solid rgba(223, 192, 128, 0.6);
+  color: #DFC080;
+}
+
+/* Frosted Floating Pill Button */
+.glass-pill-luxury {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 15px -3px rgba(15, 26, 44, 0.08);
+}
+
+/* Gold Gradient Text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #DFBA6B 0%, #C5A059 50%, #9B772E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dark Obsidian Gradient */
+.bg-obsidian-gradient {
+  background: radial-gradient(circle at 80% 20%, #15253F 0%, #0F1A2C 45%, #080E18 100%);
+}
+
+/* Subtle Shimmer Animation */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s infinite;
+}
+
+/* Leaflet Overrides */
+.leaflet-container {
+  font-family: 'Inter', sans-serif !important;
+  border-radius: 1.25rem !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 1.25rem !important;
+  padding: 0 !important;
+  box-shadow: 0 25px 45px -10px rgba(15, 26, 44, 0.25) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(255, 255, 255, 0.96) !important;
+}

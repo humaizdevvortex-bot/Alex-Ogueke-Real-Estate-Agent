@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <script>
+      (function() {
+        try {
+          var _origFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _origFetch;
+            },
+            set: function(val) {
+              _origFetch = val;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (_) {}
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Ogueke | Los Angeles & South Bay Real Estate Professional</title>
+    <meta name="description" content="Connect with Alex Ogueke of Keller Williams Realty for expert real estate guidance across Torrance, Los Angeles, and South Bay communities. CalDRE #02079279." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Alex Ogueke | Los Angeles & South Bay Real Estate Professional" />
+    <meta property="og:description" content="Discover verified sales, active listings, and neighborhood expertise across Torrance and Los Angeles with Alex Ogueke, Keller Williams Realty." />
+    <meta property="og:image" content="/src/assets/alex-ogueke.jpg" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alex Ogueke | Keller Williams Realty South Bay" />
+    <meta name="twitter:description" content="16 Closed Sales · $10.2M Total Value · Serving Torrance, Carson, Gardena & Los Angeles." />
+    <meta name="twitter:image" content="/src/assets/alex-ogueke.jpg" />
+
+    <!-- Google Fonts: Manrope, Plus Jakarta Sans, Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Leaflet CSS for interactive location map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Custom Luxury Monogram Crest Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23F5DF9E'/%3E%3Cstop offset='50%25' stop-color='%23C5A059'/%3E%3Cstop offset='100%25' stop-color='%239B772E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='50,4 94,26 94,74 50,96 6,74 6,26' fill='%230F1A2C' stroke='url(%23g)' stroke-width='4'/%3E%3Ccircle cx='50' cy='52' r='22' stroke='url(%23g)' stroke-width='3' fill='none'/%3E%3Cpath d='M50 28 L35 70 M50 28 L65 70 M40 54 L60 54' stroke='url(%23g)' stroke-width='3.5' stroke-linecap='round'/%3E%3Cpolygon points='50,20 53,24 50,28 47,24' fill='url(%23g)'/%3E%3C/svg%3E" />
+  </head>
+  <body class="bg-white text-[#191919] antialiased selection:bg-[#173B63] selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
