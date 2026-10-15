@@ -1,3 +1,11 @@
+const imageAssets = import.meta.glob<string>("../assets/**/*", {
+  eager: true,
+  query: "?url",
+  import: "default"
+});
+
+const imageAsset = (path: string) => imageAssets[`../assets/${path}`] ?? path;
+
 export interface PropertyItem {
   id: string;
   address: string;
@@ -76,8 +84,8 @@ export const AGENT_INFO = {
   yelpRating: 5.0,
   yelpReviewCount: 2,
   reportingPeriod: "Prior 5-Year Reporting Period (Homes.com Verified MLS Snapshot)",
-  portraitImage: "/src/assets/alex-ogueke.jpg",
-  heroBannerBg: "/src/assets/banner-southbay.jpg",
+  portraitImage: imageAsset("images/alex-ogueke img.jpg"),
+  heroBannerBg: imageAsset("banner-southbay.jpg"),
   bio: [
     "Alex Ogueke was born in Carson, California, and has lived throughout the Los Angeles area and Orange County. He also spent nine years in Nigeria before returning to Los Angeles. These diverse experiences have given him a unique perspective on real estate and help him connect with people from different communities.",
     "Affiliated with Keller Williams Realty South Bay in Torrance, Alex provides hands-on, high-touch advocacy for buyers, sellers, and real estate investors. With deep familiarity across Torrance, Gardena, Carson, and the wider Los Angeles metropolitan area, he delivers grounded market data, strategic negotiation, and personalized communication every step of the way."
@@ -118,11 +126,11 @@ export const ALL_PROPERTIES: PropertyItem[] = [
     highlights: ["Active Exclusive Listing", "Walteria Neighborhood", "Spacious 1,766 Sq Ft", "Private Courtyard & Pool"],
     currentEstValue: "$1.7M",
     coordinates: [33.8058, -118.3496],
-    image: "/src/assets/properties/codona-24263.jpg",
+    image: imageAsset("properties/codona-24263.jpg"),
     gallery: [
-      "/src/assets/properties/codona-24263.jpg",
-      "/src/assets/properties/codona-pool.jpg",
-      "/src/assets/properties/codona-interior.jpg"
+      imageAsset("properties/codona-24263.jpg"),
+      imageAsset("properties/codona-pool.jpg"),
+      imageAsset("properties/codona-interior.jpg")
     ],
     description: "Exceptional Walteria Torrance home situated on prestigious Los Codona Avenue. Boasting 3 bedrooms and an expansive 1,766 sq ft floor plan with sun-filled living spaces, sparkling private swimming pool, private terrace, and immediate proximity to award-winning Torrance schools and South Bay beaches."
   },
@@ -147,11 +155,11 @@ export const ALL_PROPERTIES: PropertyItem[] = [
     highlights: ["Active Listing", "Resort-Style Pool & Grounds", "Private Balcony with Palms", "Torrance Walteria"],
     currentEstValue: "$699K",
     coordinates: [33.8087, -118.3499],
-    image: "/src/assets/properties/codona-condo.jpg",
+    image: imageAsset("properties/codona-condo.jpg"),
     gallery: [
-      "/src/assets/properties/codona-condo.jpg",
-      "/src/assets/properties/codona-interior.jpg",
-      "/src/assets/properties/codona-pool.jpg"
+      imageAsset("properties/codona-condo.jpg"),
+      imageAsset("properties/codona-interior.jpg"),
+      imageAsset("properties/codona-pool.jpg")
     ],
     description: "Charming and stylish two-bedroom Walteria condominium located in a manicured Spanish-tile community on Los Codona. Offers dual master bedroom suites, open living/dining, private balcony framed by swaying palms, resort pool, and serene South Bay coastal breezes."
   },
@@ -176,11 +184,11 @@ export const ALL_PROPERTIES: PropertyItem[] = [
     highlights: ["Active Listing", "1,994 Sq Ft Modern Interior", "Designer Kitchen & High Ceilings", "Prime Torrance Location"],
     currentEstValue: "$1.3M",
     coordinates: [33.8101, -118.3492],
-    image: "/src/assets/properties/codona-interior.jpg",
+    image: imageAsset("properties/codona-interior.jpg"),
     gallery: [
-      "/src/assets/properties/codona-interior.jpg",
-      "/src/assets/properties/codona-pool.jpg",
-      "/src/assets/properties/codona-24263.jpg"
+      imageAsset("properties/codona-interior.jpg"),
+      imageAsset("properties/codona-pool.jpg"),
+      imageAsset("properties/codona-24263.jpg")
     ],
     description: "Sophisticated two-story Walteria residence offering nearly 2,000 square feet of curated design, towering ceiling lines, chef's gourmet kitchen with gold hardware, wide-plank oak flooring, and sliding glass wall connecting to an entertainer's outdoor courtyard."
   },
@@ -210,7 +218,7 @@ export const ALL_PROPERTIES: PropertyItem[] = [
     daysOnMarket: 71,
     overListPercentage: 5,
     coordinates: [33.9686, -118.2325],
-    image: "/src/assets/properties/bell-ave.jpg",
+    image: imageAsset("properties/bell-ave.jpg"),
     description: "Exceptional duplex multifamily property featuring 6 bedrooms and 3 full baths across two standalone structures. Gated private driveway, separate meters, and strong income potential in a high-demand LA pocket."
   },
   {
@@ -232,7 +240,7 @@ export const ALL_PROPERTIES: PropertyItem[] = [
     role: "Buyer's Agent",
     highlights: ["Represented Buyer", "Prime Torrance Location", "Private Yard & Attached Garage"],
     coordinates: [33.8291, -118.2974],
-    image: "/src/assets/properties/torrance-220th.jpg",
+    image: imageAsset("properties/torrance-220th.jpg"),
     description: "Classic Torrance single-family residence with bright living spaces, mature landscaping, sunny private yard, and convenient access to South Bay employment hubs, parks, and dining."
   },
   {
@@ -257,7 +265,7 @@ export const ALL_PROPERTIES: PropertyItem[] = [
     daysOnMarket: 40,
     overListPercentage: 4,
     coordinates: [33.9749, -118.2988],
-    image: "/src/assets/properties/71st-living.jpg",
+    image: imageAsset("properties/71st-living.jpg"),
     description: "Masterfully renovated modern bungalow boasting custom built-in millwork, sleek plaster fireplace, natural wide-plank oak flooring, clerestory greenery views, and turnkey designer finishes."
   },
   {
@@ -279,7 +287,7 @@ export const ALL_PROPERTIES: PropertyItem[] = [
     role: "Buyer's Agent",
     highlights: ["Represented Buyer", "Brick & Iron Wrought Perimeter", "Expansive South Bay Lot"],
     coordinates: [33.9118, -118.3142],
-    image: "/src/assets/properties/gramercy-gardena.jpg",
+    image: imageAsset("properties/gramercy-gardena.jpg"),
     description: "Charming Gardena residence framed by red brick and ornamental iron gating, Spanish tile trim accents, lush palm trees, and an inviting floor plan near Gardena community parks."
   },
   {
@@ -301,7 +309,7 @@ export const ALL_PROPERTIES: PropertyItem[] = [
     role: "Buyer's Agent",
     highlights: ["Represented Buyer", "Spacious 4-Bed Layout", "Two-Car Garage & Low-Water Yard"],
     coordinates: [34.6853, -118.1561],
-    image: "/src/assets/properties/barham-lancaster.jpg",
+    image: imageAsset("properties/barham-lancaster.jpg"),
     description: "Immaculate two-story family home in a tranquil community featuring generous living spaces, dual-zone comfort, drought-tolerant desert landscaping, and warm evening curb appeal."
   },
   {
@@ -323,7 +331,7 @@ export const ALL_PROPERTIES: PropertyItem[] = [
     role: "Buyer's Agent",
     highlights: ["Represented Investor Buyer", "Multi-Unit Income Asset", "High Cap Rate Opportunity"],
     coordinates: [34.8986, -117.0228],
-    image: "/src/assets/properties/williams-barstow.jpg",
+    image: imageAsset("properties/williams-barstow.jpg"),
     description: "Value-add residential income apartment building secured on behalf of an investor client looking for strong cash flow and portfolio diversification in Southern California's Inland corridor."
   }
 ];
@@ -340,7 +348,7 @@ export const AREAS_EXPERIENCE: AreaExperience[] = [
     region: "South Bay, CA",
     salesCount: 2,
     description: "Alex's birthplace and an established South Bay community renowned for peaceful suburban tracts, parks, and central logistics proximity.",
-    image: "/src/assets/areas/carson.jpg",
+    image: imageAsset("areas/carson.jpg"),
     tags: ["Birthplace", "South Bay", "Suburban Comfort"]
   },
   {
@@ -349,7 +357,7 @@ export const AREAS_EXPERIENCE: AreaExperience[] = [
     region: "South Bay, CA",
     salesCount: 2,
     description: "A culturally rich and culinary destination with welcoming neighborhoods, scenic community parks, and strong market appreciation.",
-    image: "/src/assets/areas/gardena.jpg",
+    image: imageAsset("areas/gardena.jpg"),
     tags: ["Parks", "Convenience", "Family Friendly"]
   },
   {
@@ -358,7 +366,7 @@ export const AREAS_EXPERIENCE: AreaExperience[] = [
     region: "Los Angeles, CA",
     salesCount: 1,
     description: "A vibrant pocket featuring community green spaces, water ponds, walking trails, and convenient LA metro accessibility.",
-    image: "/src/assets/areas/manchester-square.jpg",
+    image: imageAsset("areas/manchester-square.jpg"),
     tags: ["Parkside", "Urban Access", "Growth Corridor"]
   },
   {
@@ -367,7 +375,7 @@ export const AREAS_EXPERIENCE: AreaExperience[] = [
     region: "Antelope Valley, CA",
     salesCount: 1,
     description: "Spacious contemporary homes with mountain views, value-oriented price per square foot, and family-oriented amenities.",
-    image: "/src/assets/areas/lancaster.jpg",
+    image: imageAsset("areas/lancaster.jpg"),
     tags: ["Value", "Mountain Views", "Spacious Living"]
   },
   {
@@ -376,7 +384,7 @@ export const AREAS_EXPERIENCE: AreaExperience[] = [
     region: "South Los Angeles, CA",
     salesCount: 1,
     description: "An energetic urban corridor distinguished by artisan food markets, creative community hubs, and high rental return dynamics.",
-    image: "/src/assets/areas/vermont-slauson.jpg",
+    image: imageAsset("areas/vermont-slauson.jpg"),
     tags: ["Artisan Food Hubs", "Income Potential", "Urban Energy"]
   },
   {
@@ -385,7 +393,7 @@ export const AREAS_EXPERIENCE: AreaExperience[] = [
     region: "South Bay, CA",
     salesCount: 1,
     description: "A coveted South Bay enclave bordering Torrance with tree-lined streets, classic mid-century homes, and excellent neighborhood quietude.",
-    image: "/src/assets/areas/west-carson.jpg",
+    image: imageAsset("areas/west-carson.jpg"),
     tags: ["Tree-Lined", "Bordering Torrance", "Mid-Century Charm"]
   }
 ];
